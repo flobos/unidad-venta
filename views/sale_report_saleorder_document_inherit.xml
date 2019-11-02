@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_saleorder_document_unidadventa_inherit" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//span[@t-field='l.product_uom']" position="replace">
+            <span t-field="l.product_uom.unidadventa_id.name" groups="product.group_uom"/>
+        </xpath>
+    </template>
+
+</odoo>

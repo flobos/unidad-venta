@@ -3,12 +3,14 @@ from odoo import models, fields, api
 class unidad_ventas_uom(models.Model):
 
     _inherit = 'product.uom'
-    unidad_venta = fields.Char(string="Unidad para Venta",required=True)
+    unidadventa_id = fields.Many2one('unidad_ventas.unidadventas', string="Unidad de Ventas", required=True)
 
     @api.multi
     def name_get(self):
         result = []
-        for account in self:
-            name = account.unidad_venta
-            result.append((account.id, name))
+        for obj in self:
+            name = '[' +obj.name + ']' + ' ' + obj.unidadventa_id.name
+            result.append((obj.id, name))
         return result
+
+

@@ -16,7 +16,7 @@
             <field name="arch" type="xml">
 
                <field name="name" position="before">
-                    <field name="unidad_venta" />
+                    <field name="unidadventa_id" />
                 </field>
 
             </field>
