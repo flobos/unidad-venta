@@ -9,8 +9,8 @@ class unidad_ventas_uom(models.Model):
     def name_get(self):
         result = []
         for data_set in self:
-           name = data_set.unidadventa_id.name
-           result.append((data_set.id, name))
+           nombre = data_set.unidadventa_id.name
+           result.append((data_set.id, nombre))
         return result
 
 
