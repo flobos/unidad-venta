@@ -10,7 +10,7 @@ class unidad_ventas_uom(models.Model):
         result = []
         for obj in self:
          # name = '[' +obj.name + ']' + ' ' + str(obj.unidadventa_id.name)
-         name = '[' + str(obj.name) + ']' + ' ' + str(obj.unidadventa_id.name)
+         name = '[' + str(obj.name) + ']'
 
         result.append((obj.id, name))
         return result
