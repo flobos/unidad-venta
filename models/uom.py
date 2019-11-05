@@ -8,10 +8,9 @@ class unidad_ventas_uom(models.Model):
     @api.multi
     def name_get(self):
         result = []
-        for obj in self:
-           name = '[' + str(obj.name) + ']'
-
-        result.append((obj.id, name))
+        for data_set in self:
+           name = data_set.unidadventa_id.name
+           result.append((data_set.id, name))
         return result
 
 
