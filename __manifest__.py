@@ -26,11 +26,9 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'views/uom.xml',
-        'views/unidadventa.xml',
         'views/sale_report_saleorder_document_inherit.xml',
         'views/account_report_invoice_document_inherit.xml',
-        'views/menus.xml'
+        'views/products.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
