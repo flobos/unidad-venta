@@ -3,7 +3,7 @@
 
     <template id="account_report_invoice_document_unidadventa_inherit" inherit_id="account.report_invoice_document">
         <xpath expr="//span[@t-field='l.uom_id']" position="replace">
-            <span t-field="l.uom_id.unidadventa_id.name" groups="product.group_uom"/>
+            <span t-field="l.uom_venta_id.unidadventa_id.name" groups="product.group_uom"/>
         </xpath>
     </template>
 

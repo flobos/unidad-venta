@@ -17,6 +17,12 @@
                     <field name="uom_venta_id" groups="product.group_uom" options="{'no_create': False}"/>
                 </field>
 
+                <group name="group_standard_price" position="after">
+                    <group string="Productos Disponibles">
+                      <field name="productos_disponible" />
+                    </group>
+                </group>
+
                 <xpath expr="//field[@name='uom_id']" position="attributes">
                     <attribute name="string">Unidad de medida inventario</attribute>
                 </xpath>
