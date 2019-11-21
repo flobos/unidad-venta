@@ -31,8 +31,7 @@
         'views/sale_report_saleorder_document_inherit.xml',
         'views/account_report_invoice_document_inherit.xml',
         'views/menus.xml',
-        'views/products.xml',
-        'views/stock_report_picking_inherit.xml'
+        'views/products.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
