@@ -4,7 +4,7 @@
         <record model="ir.actions.act_window" id="productos_unidad_ventas_action">
             <field name="name">productos_unidad_ventas</field>
             <field name="res_model">product.template</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
 
         <record model="ir.ui.view" id="productos_unidad_ventas_form_view">
@@ -17,15 +17,62 @@
                     <field name="uom_venta_id" groups="product.group_uom" options="{'no_create': False}"/>
                 </field>
 
-                <group name="group_standard_price" position="after">
-                    <group string="Productos Disponibles">
-                      <field name="productos_disponible" />
-                    </group>
-                </group>
 
                 <xpath expr="//field[@name='uom_id']" position="attributes">
                     <attribute name="string">Unidad de medida inventario</attribute>
                 </xpath>
+
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="productos_unidad_ventas_tree_view">
+            <field name="name">productos_unidad_ventas</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+
+               <field name="type" position="after">
+                    <field name="productos_disponible"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="productos_unidad_ventas_kanban_view">
+            <field name="name">productos_unidad_ventas</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_kanban_view"/>
+            <field name="arch" type="xml">
+
+               <field name="lst_price" position="after">
+                    <field name="productos_disponible"/>
+                </field>
+                <ul position="inside">
+                    <li >Disp: Ventas <b><field name="productos_disponible"/></b></li>
+                </ul>
+
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="productos_unidad_ventas_prop_action">
+            <field name="name">productos_unidad_ventas</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.ui.view" id="productos_unidad_ventas_prop_form_view">
+            <field name="name">productos_unidad_ventas</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="stock.product_template_form_view_procurement_button"/>
+            <field name="arch" type="xml">
+
+               <button name="action_open_quants" position="before">
+                    <button type="object"
+                                name="action_open_quants"
+                                attrs="{'invisible':[('type', '!=', 'product')]}"
+                                class="oe_stat_button" icon="fa-building-o">
+                                <field name="productos_disponible" widget="statinfo" string="Disp. Venta"/>
+                    </button>
+               </button>
 
             </field>
         </record>

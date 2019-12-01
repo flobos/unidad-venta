@@ -4,3 +4,4 @@ from . import models
 from . import uom
 from . import unidadventas
 from . import product
+from . import stock_quant

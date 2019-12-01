@@ -30,6 +30,7 @@
         'views/unidadventa.xml',
         'views/sale_report_saleorder_document_inherit.xml',
         'views/account_report_invoice_document_inherit.xml',
+        'views/stock_quant_view.xml',
         'views/menus.xml',
         'views/products.xml'
     ],
